@@ -34,47 +34,49 @@
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
     padding:.8rem 5vw;
-    background:rgba(13,27,62,.82);
+    background:rgba(255,255,255,.86);
+    border-bottom:1px solid var(--line);
     backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   }
-  nav .logo{color:#fff;font-weight:900;font-size:1.05rem;letter-spacing:.05em;}
+  nav .logo{color:var(--navy);font-weight:900;font-size:1.05rem;letter-spacing:.05em;}
   nav .logo span{color:var(--amber);}
   nav ul{display:flex;gap:1.6rem;list-style:none;}
-  nav a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.92rem;transition:color .2s;}
-  nav a:hover{color:#fff;}
+  nav a{color:var(--muted);text-decoration:none;font-size:.92rem;transition:color .2s;}
+  nav a:hover{color:var(--navy);}
   @media(max-width:640px){nav ul{display:none;}}
-  /* ---------- Hero ---------- */
+  /* ---------- Hero（明亮版） ---------- */
   header{
     position:relative;min-height:100vh;
     display:flex;flex-direction:column;justify-content:center;align-items:center;
-    text-align:center;color:#fff;
-    background:radial-gradient(1200px 700px at 78% 12%,#7c2d12 0%,transparent 50%),
-               radial-gradient(900px 600px at 12% 88%,#1e3a8a 0%,transparent 52%),
-               linear-gradient(160deg,#0d1b3e 0%,#131f45 60%,#0b1530 100%);
+    text-align:center;color:var(--navy);
+    background:radial-gradient(900px 520px at 82% 8%,rgba(253,230,138,.55) 0%,transparent 60%),
+               radial-gradient(820px 520px at 8% 92%,rgba(186,230,253,.6) 0%,transparent 55%),
+               linear-gradient(160deg,#f0f9ff 0%,#eef2ff 55%,#fefce8 100%);
     padding:7rem 6vw 5rem;
   }
-  .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.32;pointer-events:none;}
-  .orb.a{width:320px;height:320px;background:#f59e0b;top:14%;left:8%;animation:float 9s ease-in-out infinite;}
+  .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.3;pointer-events:none;}
+  .orb.a{width:320px;height:320px;background:#fbbf24;top:14%;left:8%;animation:float 9s ease-in-out infinite;}
   .orb.b{width:280px;height:280px;background:#38bdf8;bottom:14%;right:9%;animation:float 11s ease-in-out infinite reverse;}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
   .hero-kicker{
     display:inline-flex;align-items:center;gap:.5rem;
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid #fcd34d;
     padding:.35rem 1.1rem;border-radius:999px;
-    font-size:.88rem;letter-spacing:.15em;color:#fcd34d;
-    margin-bottom:1.6rem;background:rgba(255,255,255,.06);
+    font-size:.88rem;letter-spacing:.15em;color:#b45309;
+    margin-bottom:1.6rem;background:#fffbeb;
   }
   header h1{font-size:clamp(2.1rem,5.6vw,3.7rem);font-weight:900;line-height:1.3;letter-spacing:.04em;}
   header h1 .grad{
-    background:linear-gradient(90deg,#fbbf24,#38bdf8,#a78bfa);
+    background:linear-gradient(90deg,#0ea5e9,#8b5cf6,#f59e0b);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero-sub{margin-top:1.2rem;max-width:760px;color:rgba(255,255,255,.82);font-size:clamp(1rem,2vw,1.15rem);}
+  .hero-sub{margin-top:1.2rem;max-width:760px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);}
   .step-chain{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.7rem;margin-top:2.4rem;}
   .step-pill{
     display:flex;align-items:center;gap:.55rem;
-    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
-    padding:.6rem 1.3rem;border-radius:999px;font-weight:700;font-size:.98rem;
+    background:#fff;border:1px solid var(--line);
+    box-shadow:0 4px 14px rgba(13,27,62,.07);
+    padding:.6rem 1.3rem;border-radius:999px;font-weight:700;font-size:.98rem;color:var(--ink);
   }
   .step-pill .num{
     display:inline-flex;align-items:center;justify-content:center;
@@ -84,11 +86,11 @@
   .step-pill.sa .num{background:#38bdf8;}
   .step-pill.sb .num{background:#a78bfa;}
   .step-pill.sc .num{background:#34d399;}
-  .chain-arrow{color:rgba(255,255,255,.55);font-size:1.2rem;font-weight:900;}
-  .hero-note{margin-top:2.2rem;color:rgba(255,255,255,.6);font-size:.95rem;}
+  .chain-arrow{color:#94a3b8;font-size:1.2rem;font-weight:900;}
+  .hero-note{margin-top:2.2rem;color:var(--muted);font-size:.95rem;}
   .scroll-hint{
     position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-    color:rgba(255,255,255,.55);font-size:1.6rem;animation:bob 1.8s ease-in-out infinite;text-decoration:none;
+    color:#94a3b8;font-size:1.6rem;animation:bob 1.8s ease-in-out infinite;text-decoration:none;
   }
   @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
   /* ---------- Sections ---------- */
@@ -129,17 +131,17 @@
   .flow .f-card.hl b{color:#0284c7;}
   .flow .f-card.win{background:#f0fdf4;border-color:#bbf7d0;}
   .flow .f-card.win b{color:#059669;}
-  /* 一魚三吃金句 */
+  /* 一魚三吃金句（明亮漸層） */
   .fish-quote{
     margin-top:1.6rem;padding:2rem 2.2rem;border-radius:var(--radius);
-    background:linear-gradient(120deg,#0d1b3e,#1e3a8a);color:#fff;box-shadow:var(--shadow);
+    background:linear-gradient(120deg,#0ea5e9,#8b5cf6);color:#fff;box-shadow:var(--shadow);
   }
   .fish-quote .q{font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:900;letter-spacing:.04em;}
   .fish-quote .q .fish{font-size:1.3em;margin-right:.4rem;}
   .fish-chips{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.1rem;}
   .fish-chips span{
     display:inline-flex;align-items:center;gap:.4rem;
-    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);
     padding:.35rem 1.1rem;border-radius:999px;font-weight:700;font-size:.95rem;
   }
   /* 三贏卡片 */
@@ -168,35 +170,33 @@
   table.modes td{color:var(--muted);}
   table.modes td b{color:var(--ink);}
   table.modes tr:last-child th,table.modes tr:last-child td{border-bottom:none;}
-  .plan-art{display:flex;justify-content:center;margin-top:2rem;}
-  .plan-art svg{width:100%;max-width:640px;height:auto;}
-  /* ---------- 閉環 ---------- */
+  /* ---------- 銷售閉環（明亮版，置頂區塊） ---------- */
   .loop-sec{
-    background:radial-gradient(1000px 600px at 50% 0%,#065f46 0%,transparent 60%),
-               linear-gradient(180deg,#0d1b3e,#0b1530);
-    color:#fff;
+    background:linear-gradient(180deg,#ecfdf5 0%,#f0f9ff 100%);
+    color:var(--ink);
   }
-  .loop-sec .kicker{color:#6ee7b7;}
-  .loop-sec .lead{color:rgba(255,255,255,.75);}
+  .loop-sec .kicker{color:#059669;}
   .loop-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem;}
   @media(max-width:880px){.loop-grid{grid-template-columns:1fr;}}
-  .loop-grid svg{width:100%;max-width:520px;height:auto;display:block;margin:0 auto;}
+  .loop-grid svg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto;}
   .path-card{
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
     border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1.2rem;
   }
-  .path-card h4{display:flex;align-items:center;gap:.6rem;font-size:1.08rem;font-weight:900;margin-bottom:.6rem;}
+  .path-card h4{display:flex;align-items:center;gap:.6rem;font-size:1.08rem;font-weight:900;margin-bottom:.6rem;color:var(--ink);flex-wrap:wrap;}
   .path-card .pt{
     font-size:.75rem;font-weight:900;padding:.15rem .8rem;border-radius:999px;color:#0d1b3e;letter-spacing:.08em;
   }
-  .path-card p{color:rgba(255,255,255,.85);font-size:.97rem;}
-  .path-card b{color:#fff;}
-  .loop-close{margin-top:2.2rem;text-align:center;font-size:clamp(1.05rem,2.4vw,1.35rem);font-weight:900;letter-spacing:.06em;}
+  .path-card p,.path-card li{color:var(--muted);font-size:.97rem;}
+  .path-card b{color:var(--ink);}
+  .path-card ol{padding-left:1.4rem;}
+  .path-card ol li{margin-bottom:.4rem;}
+  .loop-close{margin-top:1.4rem;text-align:center;font-size:clamp(1.05rem,2.4vw,1.35rem);font-weight:900;letter-spacing:.06em;color:var(--ink);}
   .loop-close .grad{
-    background:linear-gradient(90deg,#fbbf24,#38bdf8,#34d399);
+    background:linear-gradient(90deg,#f59e0b,#0ea5e9,#10b981);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  footer{background:#0b1530;color:rgba(255,255,255,.55);text-align:center;padding:2.2rem 6vw;font-size:.88rem;}
+  footer{background:#eef2f7;color:var(--muted);text-align:center;padding:2.2rem 6vw;font-size:.88rem;}
   /* accent helpers */
   .a-accent{background:var(--blue);}   .a-border{border-color:var(--blue);}
   .b-accent{background:var(--violet);} .b-border{border-color:var(--violet);}
@@ -215,9 +215,9 @@
 <nav>
   <div class="logo">政府資源 <span>雙引擎</span></div>
   <ul>
+    <li><a href="#loop">銷售閉環</a></li>
     <li><a href="#plan-a">方案 A・韌性計畫</a></li>
     <li><a href="#plan-b">方案 B・企業專班</a></li>
-    <li><a href="#loop">銷售閉環</a></li>
   </ul>
 </nav>
 
@@ -240,8 +240,107 @@
     <div class="step-pill sc"><span class="num">∞</span>客戶銷售閉環</div>
   </div>
   <p class="hero-note">兩大方案，一個閉環——政府資源不是補貼，是獲客引擎</p>
-  <a class="scroll-hint" href="#plan-a">⌄</a>
+  <a class="scroll-hint" href="#loop">⌄</a>
 </header>
+
+<!-- ================= 銷售閉環（置頂） ================= -->
+<section id="loop" class="loop-sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <span class="kicker">SALES LOOP・重點總結</span>
+      <h2>客戶銷售閉環：<br>新客變舊客，舊客一直續。</h2>
+    </div>
+    <div class="loop-grid">
+      <div class="reveal">
+        <!-- 銷售路徑圖 -->
+        <svg viewBox="0 0 640 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="新客經方案A入手、升級方案B後分為成為穩定舊客與再次申請方案B兩條路徑的流程圖">
+          <defs>
+            <marker id="fl-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/>
+            </marker>
+          </defs>
+          <!-- 連接箭頭 -->
+          <g stroke="#94a3b8" stroke-width="4" fill="none">
+            <path d="M320 118 L320 148" marker-end="url(#fl-arw)"/>
+            <path d="M320 258 L320 288" marker-end="url(#fl-arw)"/>
+            <path d="M276 373 L184 421" marker-end="url(#fl-arw)"/>
+            <path d="M364 373 L456 421" marker-end="url(#fl-arw)"/>
+          </g>
+          <!-- 箭頭旁註解 -->
+          <g font-family="Noto Sans TC,sans-serif" font-size="13" fill="#64748b" font-weight="700">
+            <text x="336" y="140" text-anchor="start">15 萬優惠價入手</text>
+            <text x="336" y="280" text-anchor="start">信任累積</text>
+            <text x="382" y="336" text-anchor="start">我們協助送件申請</text>
+            <text x="382" y="356" text-anchor="start">政府補助 0 元續約</text>
+            <text x="382" y="376" text-anchor="start">60 萬產品＋贈課</text>
+          </g>
+          <!-- 路徑標籤 -->
+          <g font-family="Noto Sans TC,sans-serif" font-size="13.5" font-weight="900" text-anchor="middle">
+            <text x="204" y="386" fill="#059669">路徑 1</text>
+            <text x="436" y="386" fill="#c2410c">路徑 2</text>
+          </g>
+          <!-- 節點 -->
+          <g font-family="Noto Sans TC,sans-serif" text-anchor="middle" font-weight="900">
+            <g>
+              <circle cx="320" cy="64" r="52" fill="#38bdf8"/>
+              <text x="320" y="58" font-size="22">🆕</text>
+              <text x="320" y="86" font-size="14.5" fill="#0d1b3e">新客・方案A</text>
+            </g>
+            <g>
+              <circle cx="320" cy="204" r="52" fill="#fbbf24"/>
+              <text x="320" y="198" font-size="22">👍</text>
+              <text x="320" y="226" font-size="14.5" fill="#0d1b3e">產品好用</text>
+            </g>
+            <g>
+              <circle cx="320" cy="344" r="52" fill="#a78bfa"/>
+              <text x="320" y="338" font-size="22">🎓</text>
+              <text x="320" y="366" font-size="14.5" fill="#0d1b3e">升級方案B</text>
+            </g>
+            <g>
+              <circle cx="140" cy="462" r="50" fill="#34d399"/>
+              <text x="140" y="456" font-size="21">🤝</text>
+              <text x="140" y="482" font-size="13.5" fill="#0d1b3e">成為穩定舊客</text>
+            </g>
+            <g>
+              <circle cx="500" cy="462" r="50" fill="#fb923c"/>
+              <text x="500" y="456" font-size="21">🔁</text>
+              <text x="500" y="482" font-size="13.5" fill="#0d1b3e">再申請方案B</text>
+            </g>
+          </g>
+          <!-- 終點註解 -->
+          <g font-family="Noto Sans TC,sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">
+            <text x="140" y="536" fill="#047857">持續透過方案 A／B 優惠續約</text>
+            <text x="500" y="536" fill="#9a3412">走完即結束・不再回到方案 A</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="path-card reveal">
+          <h4><span class="pt" style="background:#38bdf8">新客路徑</span>低門檻進場，一路升級</h4>
+          <p>
+            參與<b>方案 A</b>，以 <b>15 萬元優惠價</b>取得產品 →
+            產品好用、信任累積後升級<b>方案 B</b> →
+            由我們協助送件申請，用政府補助以 <b>0 元續約價值 60 萬元的產品</b>（加贈課程）。
+          </p>
+        </div>
+        <div class="path-card reveal">
+          <h4><span class="pt" style="background:#fbbf24">升級之後</span>兩條路徑</h4>
+          <ol>
+            <li><b>路徑 1｜成為穩定的舊客：</b>之後持續透過方案 A 或方案 B 取得優惠續約價，長期留在我們的生態系。</li>
+            <li><b>路徑 2｜再次申請一次方案 B：</b>再享一次政府補助的加值方案；此路徑走完即結束，不再回到方案 A。</li>
+          </ol>
+        </div>
+        <div class="path-card reveal">
+          <h4><span class="pt" style="background:#34d399">舊客路徑</span>優惠續約，留在生態系</h4>
+          <p>既有舊客直接透過<b>方案 A 或方案 B</b>，取得優惠續約價，持續使用、持續回饋。</p>
+        </div>
+        <p class="loop-close reveal">
+          政府資源不是補貼，<span class="grad">是我們的獲客引擎。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= 方案 A ================= -->
 <section id="plan-a" class="plan alt">
@@ -321,58 +420,6 @@
           <div class="discount"><b>67 折</b><small>超划算</small></div>
         </div>
       </div>
-    </div>
-
-    <div class="plan-art reveal">
-      <!-- 一魚三吃插圖 -->
-      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="一條魚延伸出營收、數據、通路三種收穫的插圖">
-        <defs>
-          <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#f0f9ff"/>
-          </linearGradient>
-          <linearGradient id="fishbody" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#0284c7"/>
-          </linearGradient>
-        </defs>
-        <rect x="8" y="8" width="624" height="284" rx="22" fill="url(#sea)"/>
-        <!-- 魚 -->
-        <g>
-          <path d="M60 150 L105 118 L105 182 Z" fill="#0369a1"/>
-          <ellipse cx="175" cy="150" rx="80" ry="46" fill="url(#fishbody)"/>
-          <path d="M150 104 q25 -18 45 0 l-20 18 Z" fill="#0369a1"/>
-          <circle cx="215" cy="138" r="7" fill="#fff"/>
-          <circle cx="217" cy="138" r="3.5" fill="#0d1b3e"/>
-          <path d="M205 165 q10 8 20 0" stroke="#0d1b3e" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <path d="M140 150 q12 -14 24 0 q-12 14 -24 0" fill="#7dd3fc"/>
-          <text x="168" y="225" font-size="15" fill="#0369a1" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">一次合作</text>
-        </g>
-        <!-- 三條收穫線 -->
-        <g stroke="#38bdf8" stroke-width="4" stroke-linecap="round" fill="none">
-          <path d="M262 128 Q330 70 398 70"/>
-          <path d="M268 150 Q330 150 398 150"/>
-          <path d="M262 172 Q330 230 398 230"/>
-        </g>
-        <g fill="#38bdf8">
-          <path d="M398 70 l-13 -7 0 14 z" transform="rotate(180 398 70)"/>
-          <path d="M398 150 l-13 -7 0 14 z" transform="rotate(180 398 150)"/>
-          <path d="M398 230 l-13 -7 0 14 z" transform="rotate(180 398 230)"/>
-        </g>
-        <!-- 三種吃法 -->
-        <g font-family="Noto Sans TC,sans-serif" font-weight="900" font-size="16">
-          <g>
-            <rect x="408" y="44" width="190" height="52" rx="14" fill="#fff" stroke="#bae6fd" stroke-width="2"/>
-            <text x="503" y="77" text-anchor="middle" fill="#0284c7">💰 賺營收</text>
-          </g>
-          <g>
-            <rect x="408" y="124" width="190" height="52" rx="14" fill="#fff" stroke="#bae6fd" stroke-width="2"/>
-            <text x="503" y="157" text-anchor="middle" fill="#0284c7">📊 收數據</text>
-          </g>
-          <g>
-            <rect x="408" y="204" width="190" height="52" rx="14" fill="#fff" stroke="#bae6fd" stroke-width="2"/>
-            <text x="503" y="237" text-anchor="middle" fill="#0284c7">🤝 養通路</text>
-          </g>
-        </g>
-      </svg>
     </div>
   </div>
 </section>
@@ -454,120 +501,6 @@
             <li>可針對企業痛點，加上聯名品牌夥伴的相關課程。</li>
           </ul>
         </div>
-      </div>
-    </div>
-
-    <div class="plan-art reveal">
-      <!-- 聯名開課插圖 -->
-      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="我方與品牌夥伴聯名開課、台下企業學員的插圖">
-        <defs>
-          <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#f5f3ff"/><stop offset="1" stop-color="#faf8ff"/>
-          </linearGradient>
-        </defs>
-        <rect x="8" y="8" width="624" height="284" rx="22" fill="url(#room)"/>
-        <!-- 大螢幕 -->
-        <rect x="150" y="34" width="340" height="110" rx="12" fill="#1e1b4b"/>
-        <text x="320" y="80" font-size="22" fill="#fff" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">AI 導入課程</text>
-        <text x="320" y="116" font-size="15" fill="#a5b4fc" font-weight="700" text-anchor="middle" font-family="Noto Sans TC,sans-serif">30 小時・含產品實作</text>
-        <!-- 兩位講師（聯名） -->
-        <g>
-          <circle cx="96" cy="122" r="20" fill="#8b5cf6"/>
-          <path d="M68 190 q28 -34 56 0 l0 18 -56 0 Z" fill="#8b5cf6"/>
-          <rect x="52" y="206" width="88" height="26" rx="13" fill="#ede9fe"/>
-          <text x="96" y="224" font-size="12.5" fill="#5b21b6" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">我方講師</text>
-        </g>
-        <g>
-          <circle cx="544" cy="122" r="20" fill="#f59e0b"/>
-          <path d="M516 190 q28 -34 56 0 l0 18 -56 0 Z" fill="#f59e0b"/>
-          <rect x="500" y="206" width="88" height="26" rx="13" fill="#fef3c7"/>
-          <text x="544" y="224" font-size="12.5" fill="#92400e" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">品牌夥伴</text>
-        </g>
-        <!-- 聯名 × -->
-        <text x="320" y="180" font-size="26" fill="#8b5cf6" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">聯名 ×</text>
-        <!-- 台下企業學員 -->
-        <g fill="#c4b5fd">
-          <circle cx="215" cy="232" r="13"/><circle cx="265" cy="232" r="13"/><circle cx="315" cy="232" r="13"/><circle cx="365" cy="232" r="13"/><circle cx="415" cy="232" r="13"/>
-          <circle cx="240" cy="266" r="13"/><circle cx="290" cy="266" r="13"/><circle cx="340" cy="266" r="13"/><circle cx="390" cy="266" r="13"/>
-        </g>
-        <text x="320" y="250" font-size="0" >學員</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 銷售閉環 ================= -->
-<section id="loop" class="loop-sec">
-  <div class="wrap">
-    <div class="reveal" style="text-align:center">
-      <span class="kicker">SALES LOOP・重點總結</span>
-      <h2>客戶銷售閉環：<br>新客變舊客，舊客一直續。</h2>
-    </div>
-    <div class="loop-grid">
-      <div class="reveal">
-        <!-- 閉環圖 -->
-        <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="新客經方案A入手、升級方案B、0元續約成為舊客的銷售閉環圖">
-          <defs>
-            <marker id="lp-arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" fill="rgba(255,255,255,.85)"/>
-            </marker>
-          </defs>
-          <g stroke="rgba(255,255,255,.85)" stroke-width="5" fill="none">
-            <path d="M329.1 104.7 A170 170 0 0 1 415.3 190.9" marker-end="url(#lp-arw)"/>
-            <path d="M415.3 329.1 A170 170 0 0 1 329.1 415.3" marker-end="url(#lp-arw)"/>
-            <path d="M190.9 415.3 A170 170 0 0 1 104.7 329.1" marker-end="url(#lp-arw)"/>
-            <path d="M104.7 190.9 A170 170 0 0 1 190.9 104.7" marker-end="url(#lp-arw)"/>
-          </g>
-          <g font-family="Noto Sans TC,sans-serif" font-size="13.5" fill="#a7f3d0" font-weight="700" text-anchor="middle">
-            <text x="405" y="112">優惠價入手</text>
-            <text x="410" y="412">口碑與信任</text>
-            <text x="112" y="412">協助送件申請</text>
-            <text x="110" y="112">優惠續約 A／B</text>
-          </g>
-          <g font-family="Noto Sans TC,sans-serif" text-anchor="middle" font-weight="900">
-            <g>
-              <circle cx="260" cy="90" r="56" fill="#38bdf8"/>
-              <text x="260" y="84" font-size="24">🆕</text>
-              <text x="260" y="112" font-size="15" fill="#0d1b3e">新客・方案A</text>
-            </g>
-            <g>
-              <circle cx="430" cy="260" r="56" fill="#fbbf24"/>
-              <text x="430" y="254" font-size="24">👍</text>
-              <text x="430" y="282" font-size="15" fill="#0d1b3e">產品好用</text>
-            </g>
-            <g>
-              <circle cx="260" cy="430" r="56" fill="#a78bfa"/>
-              <text x="260" y="424" font-size="24">🎓</text>
-              <text x="260" y="452" font-size="15" fill="#0d1b3e">升級方案B</text>
-            </g>
-            <g>
-              <circle cx="90" cy="260" r="56" fill="#34d399"/>
-              <text x="90" y="254" font-size="24">🔄</text>
-              <text x="90" y="282" font-size="15" fill="#0d1b3e">0 元續約</text>
-            </g>
-          </g>
-          <circle cx="260" cy="260" r="62" fill="#0d1b3e" stroke="rgba(255,255,255,.4)" stroke-width="3"/>
-          <text x="260" y="252" font-size="22" text-anchor="middle">♾️</text>
-          <text x="260" y="282" font-size="15" fill="#fff" font-weight="900" text-anchor="middle" font-family="Noto Sans TC,sans-serif">銷售閉環</text>
-        </svg>
-      </div>
-      <div>
-        <div class="path-card reveal">
-          <h4><span class="pt" style="background:#34d399">舊客路徑</span>優惠續約，留在生態系</h4>
-          <p>透過<b>方案 A 或方案 B</b>，取得優惠續約價，持續使用、持續回饋。</p>
-        </div>
-        <div class="path-card reveal">
-          <h4><span class="pt" style="background:#38bdf8">新客路徑</span>低門檻進場，一路升級</h4>
-          <p>
-            參與<b>方案 A</b>，以 <b>15 萬元優惠價</b>取得產品 →
-            產品好用後再推<b>方案 B</b> →
-            由我們協助送件申請，即可用政府補助以 <b>0 元續約價值 60 萬元的產品</b>（加贈課程）→
-            自然轉化為長期舊客。
-          </p>
-        </div>
-        <p class="loop-close reveal">
-          政府資源不是補貼，<span class="grad">是我們的獲客引擎。</span>
-        </p>
       </div>
     </div>
   </div>
